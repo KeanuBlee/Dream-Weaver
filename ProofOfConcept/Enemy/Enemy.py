@@ -1,24 +1,34 @@
 class Enemy:
 
-	def __init__(self, name, health, mp, stats, level, xp, is_alive, affinity):
+	def __init__(self, name, health, mp, stats, level, xp, is_alive, affinity, status, stat_multiplier):
 		self.name = name
-		self.health = health
-		self.mp = mp
+		self.base_health = health
+		self.current_health = health
+		self.base_mp = mp
+		self.current_mp = mp
 		self.stats = stats
 		self.level = level
 		self.xp = xp
 		self.is_alive = is_alive
 		self.base_affinity = affinity
-		self.battle_affinity = affinity		
+		self.battle_affinity = affinity
+		self.status = status
+		self.stat_multiplier = stat_multiplier
 		
 	def get_name(self):
 		return self.name
 
-	def get_health(self):
-		return self.health
+	def get_base_health(self):
+		return self.base_health
 
-	def get_mp(self):
-		return self.mp
+	def get_current_health(self):
+		return self.current_health
+
+	def get_base_mp(self):
+		return self.base_mp
+
+	def get_current_mp(Self):
+		return self.current_mp
 
 	def get_base_atk(self):
 		return self.stats['Attack']
@@ -50,14 +60,26 @@ class Enemy:
 	def get_battle_affinity(self):
 		return self.battle_affinity
 
+	def get_status(self):
+		return self.status
+
+	def get_stat_multiplier(self):
+		return self.stat_multiplier
+
 	def set_name(self, new_name):
 		self.name = new_name
-		
-	def set_health(self, new_health):
-		self.health = new_health
 
-	def set_mp(self, new_mp):
-		self.mp = new_mp
+	def set_base_health(self, new_health):
+		self.base_health = new_health
+
+	def set_current_health(self, new_health):
+		self.current_health = new_health
+
+	def set_base_mp(self, new_mp):
+		self.base_mp = new_mp
+
+	def set_current_mp(self, new_mp):
+		self.current_mp = new_mp
 
 	def set_base_atk(self, new_atk):
 		self.stats['Attack'] = new_atk
@@ -92,3 +114,8 @@ class Enemy:
 	def set_battle_affinity(self, new_affinity):
 		self.battle_affinity = new_affinity
 
+	def set_status(self, new_status):
+		self.status = new_status
+
+	def set_status_multiplier(self, new_multiplier):
+		self.stat_multiplier = new_multiplier

@@ -1,12 +1,12 @@
-from Orc import Orc
+from Ogre import Ogre
 
-orc = Orc()
-orc_affinity = orc.get_battle_affinity()
+ogre = Ogre()
+ogre_affinity = ogre.get_battle_affinity()
 
-for thing in orc_affinity:
-	if orc_affinity[thing] < 1:
-		print("Orc resists", thing)
-	elif orc_affinity[thing] == 1:
-		print("Orc is neutral to", thing)
+for thing in ogre_affinity:
+	if ogre_affinity[thing] < 1:
+		print("ogre resists", thing)
+	elif ogre_affinity[thing] == 1:
+		print("ogre is neutral to", thing)
 	else:
-		print("Orc is weak to", thing)
+		print("ogre is weak to", thing)

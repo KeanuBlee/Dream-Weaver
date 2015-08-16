@@ -1,3 +1,4 @@
+import math
 class Enemy:
 
 	def __init__(self, name, health, mp, stats, level, xp, is_alive, affinity, status, stat_multiplier):
@@ -9,12 +10,13 @@ class Enemy:
 		self.stats = stats
 		self.level = level
 		self.xp = xp
-		self.is_alive = is_alive
+		self.alive = is_alive
 		self.base_affinity = affinity
 		self.battle_affinity = affinity
 		self.status = status
 		self.stat_multiplier = stat_multiplier
-		
+		self.already_attacked = False
+
 	def get_name(self):
 		return self.name
 
@@ -27,7 +29,7 @@ class Enemy:
 	def get_base_mp(self):
 		return self.base_mp
 
-	def get_current_mp(Self):
+	def get_current_mp(self):
 		return self.current_mp
 
 	def get_base_atk(self):
@@ -51,13 +53,13 @@ class Enemy:
 	def get_xp(self):
 		return self.xp
 
-	def get_is_alive(self):
-		return self.is_alive
+	def is_alive(self):
+		return self.alive
 
 	def get_base_affinity(self):
 		return self.base_affinity
 
-	def get_battle_affinity(self):
+	def get_current_affinity(self):
 		return self.battle_affinity
 
 	def get_status(self):
@@ -65,6 +67,9 @@ class Enemy:
 
 	def get_stat_multiplier(self):
 		return self.stat_multiplier
+
+	def get_already_attacked(self):
+		return self.already_attacked
 
 	def set_name(self, new_name):
 		self.name = new_name
@@ -106,16 +111,19 @@ class Enemy:
 		self.xpneeded = new_xp
 
 	def set_alive(self, live_status):
-		self.is_alive = live_status
+		self.alive = live_status
 
 	def set_base_affinity(self, new_affinity):
 		self.base_affinity = new_affinity
 
-	def set_battle_affinity(self, new_affinity):
+	def set_current_affinity(self, new_affinity):
 		self.battle_affinity = new_affinity
 
 	def set_status(self, new_status):
 		self.status = new_status
 
-	def set_status_multiplier(self, new_multiplier):
+	def set_stat_multiplier(self, new_multiplier):
 		self.stat_multiplier = new_multiplier
+
+	def set_already_attacked(self, boole):
+		self.already_attacked = boole

@@ -1,12 +1,12 @@
 from Ogre import Ogre
+from Okabe import Okabe
+from Simon import Simon
+from Link import Link
+from battle import battle
 
 ogre = Ogre()
-ogre_affinity = ogre.get_battle_affinity()
+okabe = Okabe()
+simon = Simon()
+link = Link()
 
-for thing in ogre_affinity:
-	if ogre_affinity[thing] < 1:
-		print("ogre resists", thing)
-	elif ogre_affinity[thing] == 1:
-		print("ogre is neutral to", thing)
-	else:
-		print("ogre is weak to", thing)
+battle([okabe,simon,link],[ogre])

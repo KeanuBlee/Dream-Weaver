@@ -14,15 +14,17 @@ class Team_member:
 		self.base_mp = mp
 		self.current_mp = mp
 		self.stats = stats
-		self.level = self.level
+		self.level = level
 		self.currentxp = currentxp
 		self.xpneeded = xpneeded
-		self.is_alive = is_alive
-		self.base_affinity = base_affinity # Character's base affinity
-		self.current_affinity = base_affinity # Character's affinity including equipment/skills
-		self.battle_affinity = base_affinity  # Character's affinity including buffs/debuffs at the battle level
+		self.alive = is_alive
+		self.base_affinity = affinity # Character's base affinity
+		self.current_affinity = affinity # Character's affinity including equipment/skills
+		self.battle_affinity = affinity  # Character's affinity including buffs/debuffs at the battle level
 		self.status = status
 		self.stat_multiplier = stat_multiplier
+		self.already_attacked = False
+
 
 	def get_name(self):
 		return self.name
@@ -36,7 +38,7 @@ class Team_member:
 	def get_base_mp(self):
 		return self.base_mp
 
-	def get_current_mp(Self):
+	def get_current_mp(self):
 		return self.current_mp
 
 	def get_base_atk(self):
@@ -63,8 +65,8 @@ class Team_member:
 	def get_xpneeded(self):
 		return self.xpneeded
 
-	def is_Alive(self):
-		return self.is_alive
+	def is_alive(self):
+		return self.alive
 
 	def get_base_affinity(self):
 		return self.base_affinity
@@ -77,6 +79,12 @@ class Team_member:
 
 	def get_status(self):
 		return self.status
+
+	def get_stat_multiplier(self):
+		return self.stat_multiplier
+
+	def get_already_attacked(self):
+		return self.already_attacked
 
 	def set_name(self, new_name):
 		self.name = new_name
@@ -118,7 +126,7 @@ class Team_member:
 		self.xpneeded = new_xp
 
 	def set_alive(self, live_status):
-		self.is_alive = live_status
+		self.alive = live_status
 
 	def set_base_affinity(self, new_affinity):
 		self.base_affinity = new_affinity
@@ -132,3 +140,8 @@ class Team_member:
 	def set_status(self, new_status):
 		self.status = new_status
 
+	def set_stat_multiplier(self, new_mult):
+		self.stat_multiplier = new_mult
+
+	def set_already_attacked(self, boole):
+		self.already_attacked = boole
